@@ -8,7 +8,7 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class UserService {
 
-  constructor(@InjectRepository(User) private userRepo: Repository<User>) {}
+  constructor(@InjectRepository(User) private userRepo: Repository<User>) { }
 
   create(createUserDto: CreateUserDto) {
     this.userRepo.insert(createUserDto);
@@ -19,7 +19,7 @@ export class UserService {
   }
 
   findOne(id: string) {
-    return this.userRepo.findOneBy({id:id});
+    return this.userRepo.findOneBy({ id: id });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {

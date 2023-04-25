@@ -5,6 +5,8 @@ import { User } from './user/entities/user.entity';
 import { DependencyModule } from './di/dependency.module';
 import { LoggingProvider } from './di/providers/logging.provider';
 import { PersonProvider } from './di/providers/person.provider';
+import {Pool} from "pg";
+import { PG_DB_PROVIDER } from './di/providers/pgDB.provider';
 
 
 @Module({
@@ -27,7 +29,8 @@ import { PersonProvider } from './di/providers/person.provider';
 export class AppModule {
   constructor(private readonly log: LoggingProvider,
     private readonly person: PersonProvider,
-    @Inject("APP_CONSTANTS") private readonly constants: any
+    @Inject("APP_CONSTANTS") private readonly constants: any,
+    @Inject(PG_DB_PROVIDER)private readonly pgDBProvider: Pool
     ){
     log.loggError("this is an error msg");
     log.loggInfo("this is an error msg");

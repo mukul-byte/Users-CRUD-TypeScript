@@ -4,7 +4,8 @@ import { BookController } from './book.controller';
 
 @Module({
     controllers: [BookController],
-    providers: [{ provide: "BOOK_SERVICE", useClass: process.env.NODE == "dev" ? BookMockService : BookProdService }],
+    //here we have used useClass and not useValue
+    providers: [{ provide: "BOOK_SERVICE", useClass: process.env.NODE_ENV == "dev" ? BookMockService : BookProdService}],
     imports: []
 })
 export class BookModule { }

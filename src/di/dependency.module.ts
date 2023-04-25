@@ -1,11 +1,12 @@
 import { Inject, Module } from '@nestjs/common';
 import { LoggingProvider } from './providers/logging.provider';
 import { PersonProvider } from './providers/person.provider';
+import { CONSTANTS } from './providers/constants.providers';
 
-const CONSTANTS = {
-  DB_NAME: "Users",
-  DB_PASSWORD: "admin@123"
-}
+// const CONSTANTS = {
+//   DB_NAME: "Users",
+//   DB_PASSWORD: "admin@123"
+// }
 
 @Module({
   controllers: [],

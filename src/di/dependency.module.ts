@@ -14,7 +14,7 @@ import { PG_DB_PROVIDER, pgDbProvider } from './providers/pgDB.provider';
   providers: [LoggingProvider, PersonProvider,
     { useValue: CONSTANTS, provide: "APP_CONSTANTS" },
     pgDbProvider
-    ],
+  ],
   imports: [],
   exports: [LoggingProvider, PersonProvider,
     { useValue: CONSTANTS, provide: "APP_CONSTANTS" },
@@ -26,11 +26,11 @@ export class DependencyModule {
     private readonly person: PersonProvider,
     @Inject("APP_CONSTANTS") private readonly constants: any
   ) {
-    log.loggError("this is an error msg");
-    log.loggInfo("this is an error msg");
-    log.loggSuccess("this is an error msg");
+    // log.loggError("this is an error msg");
+    // log.loggInfo("this is an error msg");
+    // log.loggSuccess("this is an error msg");
 
-    console.log(person.getPerson());
-    console.log(constants.DB_NAME + " " + constants.DB_PASSWORD);
+    // console.log(person.getPerson());
+    // console.log(constants.DB_NAME + " " + constants.DB_PASSWORD);
   }
 }

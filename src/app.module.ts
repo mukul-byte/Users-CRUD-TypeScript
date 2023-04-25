@@ -7,6 +7,7 @@ import { LoggingProvider } from './di/providers/logging.provider';
 import { PersonProvider } from './di/providers/person.provider';
 import {Pool} from "pg";
 import { PG_DB_PROVIDER } from './di/providers/pgDB.provider';
+import { BookModule } from './book/book.module';
 
 
 @Module({
@@ -23,6 +24,7 @@ import { PG_DB_PROVIDER } from './di/providers/pgDB.provider';
     }),
     UserModule,
     DependencyModule,
+    BookModule,
   ],
 
 }) 
@@ -32,12 +34,12 @@ export class AppModule {
     @Inject("APP_CONSTANTS") private readonly constants: any,
     @Inject(PG_DB_PROVIDER)private readonly pgDBProvider: Pool
     ){
-    log.loggError("this is an error msg");
-    log.loggInfo("this is an error msg");
-    log.loggSuccess("this is an error msg");
+    // log.loggError("this is an error msg");
+    // log.loggInfo("this is an error msg");
+    // log.loggSuccess("this is an error msg");
 
-    console.log(person.getPerson());
+    // console.log(person.getPerson());
 
-    console.log("In AppModule" + constants.DB_NAME + " " + constants.DB_PASSWORD);
+    // console.log("In AppModule" + constants.DB_NAME + " " + constants.DB_PASSWORD);
   }
 }

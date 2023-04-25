@@ -21,7 +21,6 @@ import { PersonProvider } from './di/providers/person.provider';
     }),
     UserModule,
     DependencyModule,
-    
   ],
 
 }) 

@@ -14,7 +14,8 @@ import { CONSTANTS } from './providers/constants.providers';
     {useValue:CONSTANTS, provide: "APP_CONSTANTS"}
   ],
   imports: [],
-  exports: [LoggingProvider, PersonProvider, "APP_CONSTANTS"]
+  exports: [LoggingProvider, PersonProvider, 
+  {useValue:CONSTANTS, provide: "APP_CONSTANTS"}]
 })
 export class DependencyModule {
   constructor(private readonly log: LoggingProvider,
